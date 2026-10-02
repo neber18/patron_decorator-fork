@@ -1,0 +1,16 @@
+PATRON PROTOTYPE   (subir PRIMERO)
+
+Que hace: PlanConfig guarda la configuracion de un plan (plan base y servicios adicionales) y se puede CLONAR.
+PlanTemplateRegistry guarda plantillas listas (Estudiante conectado, Viajero, Streamer) y siempre entrega un CLON,
+nunca el original. Asi, si el usuario cambia su plan, la plantilla no se daña.
+
+Archivos: js/prototype/PlanConfig.js, js/prototype/PlanTemplateRegistry.js, tests/planConfig.test.js
+
+Antes de subir, contesta con tus palabras:
+1. Que pasaria si clone() copiara la referencia del arreglo en vez de duplicarlo?
+2. Por que el registro entrega clones y no el objeto guardado?
+3. En que se diferencia esto de crear un objeto nuevo con "new"?
+
+Como subir (solo navegador): entra al repo, Add file > Upload files, arrastra lo que hay DENTRO de esta carpeta
+(js y tests, no la carpeta 1-prototype), escribe el mensaje, marca "Create a new branch... start a pull request".
+Mensaje sugerido: feat: add Prototype pattern for plan templates
