@@ -1,0 +1,15 @@
+PATRON BUILDER   (subir SEGUNDO, despues de que se mezcle el Prototype)
+
+Que hace: PlanBuilder arma un plan paso a paso (.base().addon().named()) y valida todo en build().
+Si algo esta mal lanza PlanBuildError con TODOS los problemas juntos, no solo el primero.
+Devuelve { plan, config }: el plan ya decorado y su PlanConfig (del Prototype).
+
+Archivos: js/builder/PlanBuilder.js, tests/planBuilder.test.js
+Depende de: js/prototype/PlanConfig.js (por eso va despues del Prototype).
+
+Antes de subir, contesta con tus palabras:
+1. Por que build() valida al final y no en cada paso?
+2. Que problemas detecta el builder?
+3. Por que un servicio que no se puede repetir (por ejemplo Roaming) da error al agregarlo dos veces?
+
+Como subir: igual que la carpeta 1. Mensaje sugerido: feat: add Builder pattern to assemble plans
