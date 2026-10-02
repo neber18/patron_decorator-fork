@@ -1,0 +1,7 @@
+INTEGRACION   (ULTIMO: la hace una persona del grupo cuando los tres PR esten mezclados)
+
+Une los tres patrones en la pagina: selector de segmento, plantillas y "Mis planes" (guardar, duplicar, eliminar).
+Reemplaza archivos existentes: js/app.js, index.html, css/styles.css, README.md (agrega una seccion al final)
+y js/core/MobilePlan.js (se borra una linea suelta "...." que rompia la carga de toda la pagina).
+Agrega package.json (para correr: npm test), js/features/SavedPlansStore.js, su test y docs/adiciones-patrones-creacionales.md.
+Mensaje sugerido: feat: connect Prototype, Builder and Abstract Factory in the plan page

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Configurador de planes de celular construido con el patrón de diseño Decorator.">
+  <title>Arma tu plan móvil · Patrón Decorator</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <span class="hero__tag">Patrones de Software · Taller Patrón Decorator</span>
+      <h1>Arma tu plan móvil</h1>
+      <p>Escoge un plan base y agrégale los servicios que necesites. Cada servicio es un decorador que envuelve al plan y le suma precio y beneficios sin modificar su clase.</p>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <div class="builder">
+      <section class="panel">
+        <h2><span class="step">1</span> Elige para quién es el plan</h2>
+        <p class="panel__hint">Cada segmento tiene su <strong>fábrica abstracta</strong>: te muestra solo los planes y servicios de esa familia, con su propio descuento.</p>
+        <div id="segments" class="segments"></div>
+      </section>
+
+      <section class="panel">
+        <h2><span class="step">2</span> Elige tu plan base</h2>
+        <p class="panel__hint">Este es el <strong>componente concreto</strong> que vamos a decorar.</p>
+        <div id="base-plans" class="plan-grid"></div>
+      </section>
+
+      <section class="panel">
+        <h2><span class="step">3</span> Agrega servicios adicionales</h2>
+        <p class="panel__hint">Cada servicio es un <strong>decorador concreto</strong>. El paquete de datos se puede agregar varias veces.</p>
+        <div id="addons" class="addon-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2><span class="step">4</span> Así se construyó tu plan</h2>
+        <p class="panel__hint">Cada decorador envuelve al anterior. Al llamar <code>getPrice()</code> la petición viaja desde la capa externa hasta el plan base.</p>
+        <div class="layers-wrap">
+          <div id="layers" class="layers"></div>
+          <pre class="code"><code id="code"></code></pre>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Plantillas listas</h2>
+        <p class="panel__hint">Cada botón carga una <strong>copia</strong> de un molde (<strong>prototipo</strong>) con su segmento, así el original nunca se modifica.</p>
+        <div id="templates" class="templates"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Guarda tu plan</h2>
+        <p class="panel__hint">Se guarda en este navegador. Después puedes cargarlo, duplicarlo o borrarlo.</p>
+        <div class="save-row">
+          <label class="save-row__field">
+            <span class="save-row__label">Nombre de tu plan</span>
+            <input id="plan-name" class="input" type="text" maxlength="60" placeholder="Opcional" autocomplete="off">
+          </label>
+          <button id="save-plan" type="button" class="btn">Guardar mi plan</button>
+        </div>
+        <ul id="saved-plans" class="saved-list"></ul>
+        <p id="saved-status" class="saved-status" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+
+    <aside class="summary" aria-live="polite">
+      <div class="summary__card">
+        <span class="summary__label">Tu plan</span>
+        <p id="description" class="summary__description"></p>
+        <p class="summary__total"><span id="total"></span><small>/mes</small></p>
+
+        <div id="discount" class="discount" hidden>
+          <span id="discount-label" class="discount__policy"></span>
+          <div class="discount__row">
+            <span>Precio original</span>
+            <span id="price-original"></span>
+          </div>
+          <div class="discount__row">
+            <span>Descuento</span>
+            <span id="price-discount"></span>
+          </div>
+          <div class="discount__row discount__row--final">
+            <span>Total a pagar</span>
+            <span id="price-final"></span>
+          </div>
+        </div>
+
+        <div id="plan-errors" class="errors" hidden></div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__label">Datos</span>
+            <span id="stat-data" class="stat__value"></span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Minutos</span>
+            <span id="stat-minutes" class="stat__value"></span>
+          </div>
+        </div>
+
+        <h3>Beneficios</h3>
+        <ul id="features" class="features"></ul>
+
+        <h3>Servicios agregados</h3>
+        <ul id="active-addons" class="chips"></ul>
+
+        <h3>Detalle del cobro</h3>
+        <table class="breakdown">
+          <tbody id="breakdown"></tbody>
+        </table>
+
+        <button id="reset" type="button" class="btn btn--ghost">Empezar de nuevo</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Universidad Cooperativa de Colombia · Patrones de Software · Santiago425</div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

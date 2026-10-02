@@ -1,0 +1,10 @@
+{
+  "name": "patron-decorator-planes",
+  "version": "1.1.0",
+  "description": "Configurador de planes móviles con los patrones Decorator, Prototype, Builder y Abstract Factory",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

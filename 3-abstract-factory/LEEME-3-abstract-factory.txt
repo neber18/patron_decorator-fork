@@ -1,0 +1,15 @@
+PATRON ABSTRACT FACTORY   (subir TERCERO, o en cualquier momento: no depende de los otros)
+
+Que hace: cada segmento (Personal, Estudiante, Empresas) es una fabrica que crea una FAMILIA consistente:
+catalogo de planes + catalogo de servicios + politica de descuento. Personal deja el sitio como estaba;
+Estudiante da 10% y Empresas 5%.
+
+Archivos: js/abstractFactory/SegmentFactory.js (la fabrica abstracta y las tres concretas),
+js/abstractFactory/DiscountPolicy.js, js/abstractFactory/segments.js, tests/segmentFactory.test.js
+
+Antes de subir, contesta con tus palabras:
+1. Que tres productos crea cada fabrica y por que van juntos?
+2. Que ganas con una fabrica por segmento frente a un if grande?
+3. Cuanto paga un Estudiante por un plan de 22000? (respuesta: 19800)
+
+Como subir: igual que la carpeta 1. Mensaje sugerido: feat: add Abstract Factory for customer segments
